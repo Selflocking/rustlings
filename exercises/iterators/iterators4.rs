@@ -3,7 +3,7 @@
 // Execute `rustlings hint iterators4` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+use std::iter;
 
 pub fn factorial(num: u64) -> u64 {
     // Complete this function to return the factorial of num
@@ -15,6 +15,22 @@ pub fn factorial(num: u64) -> u64 {
     // For an extra challenge, don't use:
     // - recursion
     // Execute `rustlings hint iterators4` for hints.
+
+    // method1:
+    // if num <= 1 {
+    //     1
+    // } else {
+    //     num * factorial(num - 1)
+    // }
+
+    // method2:
+    // (1..num + 1).fold(1, |init, x| init * x)
+
+    // method3:
+    (1..num + 1).product()
+
+    // method4:
+    // (1..num + 1).rfold(1, |init, x| init * x)
 }
 
 #[cfg(test)]
